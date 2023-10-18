@@ -1,13 +1,30 @@
 import React from 'react'
+import {useState , useEffect} from 'react'
+import ItemList from './ItemList'
 
-const ItemListContainer = ({greatings}) => {
+const ItemListContainer = () => {
+
+
+    const buscarProductos = async() => {
+            const respuesta = await fetch ("https://fakestoreapi.com/products")
+            const dato = await respuesta.json()
+            return dato
+        }
+
+        const [productos, setProductos] = useState([])
+
+        useEffect( () => {
+            buscarProductos().then((p) => setProductos(p))
+        },[]
+        )
+
+
     return (
-        <div>
-
-        <h5> {greatings} </h5>
-
-        </div>
+        <>
+        <ItemList> productos = {['productos']} </ItemList>
+        </>
     )
+    
 }
 
 export default ItemListContainer
