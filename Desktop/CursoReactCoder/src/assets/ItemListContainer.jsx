@@ -18,10 +18,11 @@ const ItemListContainer = () => {
         },[]
         )
 
+        
 
     return (
         <>
-        <ItemList> productos = {['productos']} </ItemList>
+        <ItemList productos={productos} />  
         </>
     )
     
