@@ -3,8 +3,6 @@ import ItemListContainer from './ItemListContainer'
 import Item from './Item'
 
 const ItemList = ({ productos }) => {
-
-
     return (
         <div>
             {
@@ -13,8 +11,8 @@ const ItemList = ({ productos }) => {
                         <Item  
                         key={p.id}
                         nombre={p.title}
-                        descripcion={p.descripcion}
-                        precio={p.precio}
+                        descripcion={p.description}
+                        precio={p.price}
                         />
                     )
                 })
