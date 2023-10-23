@@ -1,48 +1,54 @@
-import React, { useState, forwardRef, useImperativeHandle } from 'react'
-import CartWidget from './CartWidget'
-import { Flex, Box, Spacer, MenuButton, MenuList, MenuItem, Menu, Center, Square} from '@chakra-ui/react'
-import { Input } from '@chakra-ui/react'
-import filtrarCategoria from '../App'
+import React, { useState, useEffect } from 'react';
+import { Flex, Box, Spacer, MenuButton, MenuList, MenuItem, Menu, Input } from '@chakra-ui/react';
 
 
-const NavMenu = ({categorias, filtrarCategoria}) => {
-    const [categoriaParaFiltrar, setCategoriaParaFiltrar] = useState('')
+const NavMenu = ({ categorias, filtrarCategoria, actualizarBusqueda }) => {
+    const [categoriaParaFiltrar, setCategoriaParaFiltrar] = useState('Todas');
+    const [busquedaParaFiltrar, setBusquedaParaFiltrar] = useState('');
 
+    useEffect(() => {
+        filtrarCategoria(categoriaParaFiltrar);
+    }, [categoriaParaFiltrar]);
 
+    useEffect(() => {        
+        actualizarBusqueda(busquedaParaFiltrar);
+    }, [busquedaParaFiltrar]);
 
     return (
-        <div>   
-
-            <Flex>
+        <div>
+        <Flex>
             <Box p='4' bg='green.400'>
-                Shop
+            Shop
             </Box>
             <Spacer />
             <Box p='4' bg='green.400'>
-                <Menu>
-                    <MenuButton>
-                        Tipo de productos
-                    </MenuButton>
-                        <MenuList id="categoria">
-                            {categorias.map((c, index) => ( <MenuItem onClick= {() =>asdasd } key={index}>{c}</MenuItem> ))}
-                        </MenuList>
-                </Menu>
+            <Menu>
+                <MenuButton>{categoriaParaFiltrar}</MenuButton>
+                <MenuList id='categoria'>
+                {categorias.map((c, index) => (
+                    <MenuItem key={index} onClick={() => setCategoriaParaFiltrar(c)}>
+                    {c}
+                    </MenuItem>
+                ))}
+                <MenuItem onClick={() => setCategoriaParaFiltrar('Todas')}>Todas</MenuItem>
+                </MenuList>
+            </Menu>
             </Box>
             <Spacer />
             <Box p='4' bg='green.400'>
-                <Input placeholder='Que productos buscas?' />
+            <Input
+                onChange={(e) => setBusquedaParaFiltrar(e.target.value)}
+                placeholder='Qué productos buscas?'
+            />
             </Box>
             <Spacer />
             <Box p='4' bg='green.400'>
-                <CartWidget /> 
+            
             </Box>
-            </Flex>
-    
-        
+        </Flex>
         </div>
-        
-        
-    )
-} 
+    );
+};
 
-export default NavMenu
+export default NavMenu;
+
