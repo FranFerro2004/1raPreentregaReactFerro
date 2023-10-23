@@ -6,6 +6,10 @@ import filtrarCategoria from '../App'
 
 
 const NavMenu = ({categorias, filtrarCategoria}) => {
+    const [categoriaParaFiltrar, setCategoriaParaFiltrar] = useState('')
+
+
+
     return (
         <div>   
 
@@ -20,7 +24,7 @@ const NavMenu = ({categorias, filtrarCategoria}) => {
                         Tipo de productos
                     </MenuButton>
                         <MenuList id="categoria">
-                            {categorias.map((c, index) => ( <MenuItem onClick= {filtrarCategoria(c)} key={index}>{c}</MenuItem> ))}
+                            {categorias.map((c, index) => ( <MenuItem onClick= {() =>asdasd } key={index}>{c}</MenuItem> ))}
                         </MenuList>
                 </Menu>
             </Box>
