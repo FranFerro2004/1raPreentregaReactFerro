@@ -2,13 +2,12 @@ import React from 'react'
 import ItemList from './ItemList'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
 
-const Item = ({nombre, descripcion, precio}) => {
-
-  return (
+const Item = ({nombre, descripcion, precio, imagen}) => {
+return (
     <>    
     <Card maxW='sm'>
       <CardBody>
-        <Image/>
+        <Image src={imagen}  />
         <Stack mt='6' spacing='5'>
           <Heading size='md'>{nombre}</Heading>
           <Text>
@@ -33,6 +32,6 @@ const Item = ({nombre, descripcion, precio}) => {
     </Card>  
     </>
   )
-}
+} 
 
 export default Item

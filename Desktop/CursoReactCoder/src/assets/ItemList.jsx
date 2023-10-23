@@ -2,7 +2,7 @@ import React from 'react'
 import ItemListContainer from './ItemListContainer'
 import Item from './Item'
 
-const ItemList = ({ productos }) => {
+const ItemList = ({productos}) => {
     return (
         <div>
             {
@@ -13,6 +13,7 @@ const ItemList = ({ productos }) => {
                         nombre={p.title}
                         descripcion={p.description}
                         precio={p.price}
+                        imagen={p.image}
                         />
                     )
                 })
