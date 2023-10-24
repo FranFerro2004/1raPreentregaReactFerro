@@ -1,19 +1,20 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
 
 const ProductDetail = ({productos}) => {
     const { id } = useParams()
 
+
     return (
         <Card maxW='sm'>
             <CardBody>
                 <Image src={''}  />
                 <Stack mt='6' spacing='5'>
-                <Heading size='md'>{''}</Heading>
+                <Heading size='md'>${productos.name}</Heading>
                 
                 <Text color='blue.600' fontSize='2xl'>
-                    
+                    ${productos.description}
                 </Text>
                 </Stack>
             </CardBody>

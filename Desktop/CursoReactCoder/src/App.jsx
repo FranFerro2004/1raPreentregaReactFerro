@@ -63,13 +63,12 @@ const App = () => {
 
     <ItemListContainer productos={productos} />
 
-    <ProductDetailContainer />
 
     <Routes>
 
     
 
-    <Route exact path='/product/id' element={<ProductDetailContainer/>}/> 
+    <Route exact path='/product/:id' element={<ProductDetailContainer/>}/>
 
 
     </Routes>

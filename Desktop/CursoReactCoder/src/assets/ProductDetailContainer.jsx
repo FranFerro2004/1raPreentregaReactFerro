@@ -16,7 +16,6 @@ const ProductDetailContainer = () => {
         });
     }, []);
 
-    console.log(productos);
 
     return (
         <>

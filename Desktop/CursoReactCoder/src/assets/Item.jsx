@@ -3,7 +3,7 @@ import ItemList from './ItemList'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-const Item = ({nombre, precio, imagen, key, id}) => {
+const Item = ({nombre, precio, imagen, id}) => {
 return (
     <>    
     <Card maxW='sm'>
