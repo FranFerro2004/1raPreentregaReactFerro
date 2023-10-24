@@ -1,8 +1,9 @@
 import React from 'react'
 import ItemList from './ItemList'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
+import { Link } from 'react-router-dom'
 
-const Item = ({nombre, descripcion, precio, imagen}) => {
+const Item = ({nombre, precio, imagen, key, id}) => {
 return (
     <>    
     <Card maxW='sm'>
@@ -10,9 +11,7 @@ return (
         <Image src={imagen}  />
         <Stack mt='6' spacing='5'>
           <Heading size='md'>{nombre}</Heading>
-          <Text>
-            {descripcion}
-          </Text>
+          
           <Text color='blue.600' fontSize='2xl'>
             {precio}
           </Text>
@@ -22,7 +21,9 @@ return (
       <CardFooter>
         <ButtonGroup spacing='2'>
           <Button variant='solid' colorScheme='blue'>
+            <Link to={`/product/${id}`}>
             Ver Detalles
+            </Link>
           </Button>
           <Button variant='ghost' colorScheme='blue'>
             Agregar al carrito

@@ -1,7 +1,10 @@
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ItemListContainer from "./assets/ItemListContainer";
 import NavMenu from "./assets/NavMenu";
 import { useState, useEffect } from 'react';
 import React from "react";
+import ProductDetailContainer from "./assets/ProductDetailContainer";
+import ProductDetail from "./assets/ProductDetail";
 
 const App = () => {
   const buscarProductos = async () => {
@@ -54,10 +57,24 @@ const App = () => {
   }
 
   return (
-    <div>
-      <NavMenu categorias={categorias} filtrarCategoria={filtrarCategoria} todasCategorias={todasCategorias} actualizarBusqueda={actualizarBusqueda} />
-      <ItemListContainer productos={productos} />
-    </div>
+    <BrowserRouter>
+
+    <NavMenu categorias={categorias} filtrarCategoria={filtrarCategoria} todasCategorias={todasCategorias} actualizarBusqueda={actualizarBusqueda} />
+
+    <ItemListContainer productos={productos} />
+
+    <ProductDetailContainer />
+
+    <Routes>
+
+    
+
+    <Route exact path='/product/id' element={<ProductDetailContainer/>}/> 
+
+
+    </Routes>
+
+    </BrowserRouter>
   );
 }
 
