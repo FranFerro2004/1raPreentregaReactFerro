@@ -67,8 +67,8 @@ const App = () => {
     <Routes>
 
     
-
-    <Route exact path='/product/:id' element={<ProductDetailContainer/>}/>
+    
+    <Route exact path='/product/:id' element={<ProductDetail/>}/>
 
 
     </Routes>

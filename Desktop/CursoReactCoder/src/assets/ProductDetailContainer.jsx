@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ProductDetail from './ProductDetail';
+import { useParams } from 'react-router-dom';
 
 const ProductDetailContainer = () => {
     const buscarProductos = async () => {
@@ -16,10 +17,25 @@ const ProductDetailContainer = () => {
         });
     }, []);
 
+    console.log(productos)
 
     return (
         <>
-            <ProductDetail productos={productos} />
+            {
+                productos.map((p) => {
+                    return(
+                        <ProductDetail 
+                        key={p.id}
+                        id={p.id}
+                        nombre={p.title}
+                        descripcion={p.description}
+                        precio={p.price}
+                        imagen={p.image}
+                        />
+                    )
+                })
+                    
+            }
         </>
     );
 }

@@ -1,36 +1,36 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
 
-const ProductDetail = ({productos}) => {
-    const { id } = useParams()
+
+const ProductDetail = ({/* nombre, precio, imagen, id, descripcion */}) => {
+    const {id} = useParams()
+
 
 
     return (
-        <Card maxW='sm'>
+        <Card maxW="sm">
             <CardBody>
-                <Image src={''}  />
-                <Stack mt='6' spacing='5'>
-                <Heading size='md'>${productos.name}</Heading>
-                
-                <Text color='blue.600' fontSize='2xl'>
-                    ${productos.description}
-                </Text>
+            <Image src={imagen} />
+                <Stack mt="6" spacing="5">
+                    <Heading size="md">{nombre}</Heading>
+                    <Text color="blue.600" fontSize="2xl">
+                    {descripcion}
+                    </Text>
                 </Stack>
-            </CardBody>
-            <Divider />
-            <CardFooter>
-                <ButtonGroup spacing='2'>
-                <Button variant='solid' colorScheme='blue'>
-                    Ver Detalles
-                </Button>
-                <Button variant='ghost' colorScheme='blue'>
+                </CardBody>
+                <Divider />
+                <CardFooter>
+                <ButtonGroup spacing="2">
+                    <Button variant="ghost" colorScheme="blue">
                     Agregar al carrito
-                </Button>
+                    </Button>
                 </ButtonGroup>
-            </CardFooter>
-        </Card>  
-        )
-}
+                </CardFooter>
+            </Card>
+    );
+};
 
-export default ProductDetail
+export default ProductDetail;
+
+
