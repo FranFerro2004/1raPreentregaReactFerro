@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Flex, Box, Spacer, MenuButton, MenuList, MenuItem, Menu, Input } from '@chakra-ui/react';
+import ItemListContainer from './ItemListContainer';
 
 
 const NavMenu = ({ categorias, filtrarCategoria, actualizarBusqueda }) => {
