@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import ItemList from './ItemList';
+import NavMenu from './NavMenu';
 
 const ItemListContainer = ({}) => {
     const buscarProductos = async () => {
@@ -16,6 +17,7 @@ const ItemListContainer = ({}) => {
     
     useEffect(() => {
         buscarProductos().then((p) => {
+            console.log("respuesta de api", p)
             setProductos(p);
             setProductosFijos(p);
     
@@ -53,6 +55,7 @@ const ItemListContainer = ({}) => {
 
     console.log(productosFijos)
     console.log(productos)
+    console.log(categorias)
 
     return (
         <>
