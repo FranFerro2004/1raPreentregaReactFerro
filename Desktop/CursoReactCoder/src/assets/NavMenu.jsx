@@ -3,10 +3,13 @@ import { Flex, Box, Spacer, MenuButton, MenuList, MenuItem, Menu, Input } from '
 import ItemListContainer from './ItemListContainer';
 import { Link, useParams } from 'react-router-dom';
 
-const NavMenu = ({productos}) => {
-    const categorias = ["electronics", "jewelery", "men's clothing", "women's clothing"];
+const NavMenu = ({productos, categorias}) => {
     const {category} = useParams()
+
     console.log(productos)
+    console.log(categorias)
+
+
     useEffect(() => {
         console.log(category)
     }, [category])
@@ -26,14 +29,13 @@ const NavMenu = ({productos}) => {
                             Categorías
                         </MenuButton>
                         <MenuList id='categoria'>
-                            {categorias.map((c, index) => (
+                            {categorias?.map((c, index) => (
                                 <MenuItem key={index}>
-                                    <Link to={'/category/${c}'}>
+                                    <Link to={`/category/${c}`}>
                                         {c}
                                     </Link>                                       
                                 </MenuItem>
                             ))}
-                                <MenuItem>Todas</MenuItem>
                         </MenuList>
                     </Menu>
                 </Box>

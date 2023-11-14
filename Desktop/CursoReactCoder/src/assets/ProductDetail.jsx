@@ -6,7 +6,7 @@ import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, Butto
 const ProductDetail = ({nombre, imagen, descripcion,}) => {
     const {id} = useParams()
 
-
+    console.log(id)
 
     return (
         <Card maxW="sm">
