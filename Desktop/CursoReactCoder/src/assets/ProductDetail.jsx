@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { Card, CardBody, Image, Stack, Heading, Text, Divider, CardFooter, ButtonGroup, Button,  } from '@chakra-ui/react'
 
 
-const ProductDetail = ({/* nombre, precio, imagen, id, descripcion */}) => {
+const ProductDetail = ({nombre, imagen, descripcion,}) => {
     const {id} = useParams()
 
 

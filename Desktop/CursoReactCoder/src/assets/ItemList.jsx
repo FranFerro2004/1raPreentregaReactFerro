@@ -2,11 +2,13 @@ import React from 'react'
 import ItemListContainer from './ItemListContainer'
 import Item from './Item'
 
-const ItemList = ({productos}) => {
+const ItemList = ({data}) => {
+        console.log(data)
+
     return (
         <div>
             {
-                productos.map((p) => {
+                data.map((p) => {
                     return(
                         <Item  
                         key={p.id}
