@@ -3,6 +3,7 @@ import ItemListContainer from "./assets/ItemListContainer";
 import NavMenu from "./assets/NavMenu";
 import React from "react";
 import ProductDetail from "./assets/ProductDetail";
+import ProductDetailContainer from "./assets/ProductDetailContainer";
 
 const App = () => {
 
@@ -16,7 +17,7 @@ const App = () => {
 
     <Route exact path='/' element={<ItemListContainer/>} />
     
-    <Route exact path='/product/:id' element={<ProductDetail/>}/>
+    <Route exact path='/product/:id' element={<ProductDetailContainer/>}/>
 
     <Route exact path='/category/:category' element={<ItemListContainer/>} />
 

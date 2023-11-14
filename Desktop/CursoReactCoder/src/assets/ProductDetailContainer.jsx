@@ -168,34 +168,26 @@ const ProductDetailContainer = () => {
         },
         ]
         
-        const categorias = ["electronics","jewelery","men's clothing","women's clothing"]
-        const [productos, setProductos] = useState([]);
+        const [producto, setProducto] = useState({});
+        const { id } = useParams();
+
+        const obtenerProductoPorId = () => {
+            const productoEncontrado = data.filter(producto => producto.id === id);
+            setProducto(productoEncontrado);
+        };
 
         useEffect(() => {
-            setProductos(data);
-        }, []);
+            obtenerProductoPorId();
+            console.log(producto)
+        }, [id]);
 
-        console.log(productos)
+        
 
-    return (
-        <>
-            {
-                productos.map((p) => {
-                    return(
-                        <ProductDetail 
-                        key={p.id}
-                        id={p.id}
-                        nombre={p.title}
-                        descripcion={p.description}
-                        precio={p.price}
-                        imagen={p.image}
-                        />
-                    )
-                })
-                    
-            }
-        </>
-    );
+        return (
+            <>
+                <ProductDetail producto={producto}/>
+            </>
+        );
 }
 
 export default ProductDetailContainer;
