@@ -168,26 +168,34 @@ const ProductDetailContainer = () => {
         },
         ]
         
-        const [producto, setProducto] = useState({});
+        const [producto, setProducto] = useState([]);
         const { id } = useParams();
-
+    
         const obtenerProductoPorId = () => {
-            const productoEncontrado = data.filter(producto => producto.id === id);
-            setProducto(productoEncontrado);
+            const productoEncontrado = data?.find(producto => producto.id === id);
+            setProducto(productoEncontrado || []);
         };
-
+    
         useEffect(() => {
             obtenerProductoPorId();
-            console.log(producto)
+            console.log(id)
         }, [id]);
-
-        
-
+    
+        useEffect(() => {
+            console.log(producto);
+        }, [producto]);
+    
         return (
             <>
-                <ProductDetail producto={producto}/>
+                <ProductDetail
+                    id={producto.id}
+                    nombre={producto.title}
+                    descripcion={producto.description}
+                    precio={producto.price}
+                    imagen={producto.image}
+                />
             </>
         );
-}
+    }
 
 export default ProductDetailContainer;
