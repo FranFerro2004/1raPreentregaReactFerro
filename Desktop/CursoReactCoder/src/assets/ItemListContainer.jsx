@@ -200,8 +200,8 @@ const ItemListContainer = ({}) => {
 
     return (
         <>
-            <ItemList data={productos} />
             <NavMenu productos={productos} categorias={categorias} />
+            <ItemList data={productos} />
         </>
     );
 };

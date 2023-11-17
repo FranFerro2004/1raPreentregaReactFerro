@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect,  } from 'react';
 import ProductDetail from './ProductDetail';
 import { useParams } from 'react-router-dom';
+import NavMenu from './NavMenu';
 
 const ProductDetailContainer = () => {
     const data = [
@@ -170,32 +171,36 @@ const ProductDetailContainer = () => {
         
         const [producto, setProducto] = useState([]);
         const { id } = useParams();
-    
+
         const obtenerProductoPorId = () => {
-            const productoEncontrado = data?.find(producto => producto.id === id);
+            const idProducto = parseInt(id);
+            const productoEncontrado = data?.find(producto => producto.id === idProducto);
             setProducto(productoEncontrado || []);
+            console.log(productoEncontrado);
         };
-    
+
         useEffect(() => {
-            obtenerProductoPorId();
-            console.log(id)
+            obtenerProductoPorId(id);
+            console.log(id);
         }, [id]);
-    
+
         useEffect(() => {
             console.log(producto);
         }, [producto]);
-    
+
         return (
             <>
-                <ProductDetail
-                    id={producto.id}
-                    nombre={producto.title}
-                    descripcion={producto.description}
-                    precio={producto.price}
-                    imagen={producto.image}
-                />
+            <NavMenu />
+            <ProductDetail
+                id={producto.id}
+                nombre={producto.title}
+                descripcion={producto.description}
+                precio={producto.price}
+                imagen={producto.image}
+            />
             </>
         );
-    }
+};
+
 
 export default ProductDetailContainer;

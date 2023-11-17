@@ -1,9 +1,8 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Form, Route, Routes } from "react-router-dom";
 import ItemListContainer from "./assets/ItemListContainer";
-import NavMenu from "./assets/NavMenu";
 import React from "react";
-import ProductDetail from "./assets/ProductDetail";
 import ProductDetailContainer from "./assets/ProductDetailContainer";
+import FormCompra from "./assets/FormCompra";
 
 const App = () => {
 
@@ -11,7 +10,7 @@ const App = () => {
 
     <BrowserRouter>
 
-    <NavMenu/>
+    
 
     <Routes>
 
@@ -21,6 +20,7 @@ const App = () => {
 
     <Route exact path='/category/:category' element={<ItemListContainer/>} />
 
+    <Route exact path="/form" element={<FormCompra/>} />
 
     </Routes>
 
