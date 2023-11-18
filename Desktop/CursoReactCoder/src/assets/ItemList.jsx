@@ -3,7 +3,7 @@ import ItemListContainer from './ItemListContainer'
 import Item from './Item'
 
 const ItemList = ({data}) => {
-        console.log(data)
+
 
     return (
         <div>

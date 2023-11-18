@@ -10,15 +10,10 @@ const Form = () => {
     const handleEnviarClick = () => {
         setNombreConfirmado(nombre)
         setEmailConfirmado(email)
-        console.log(nombreConfirmado);
-        console.log(emailConfirmado);
+    
     };
 
-    useEffect(() => {
-        console.log(nombre);
-        console.log(email);
-
-    },[nombre, email])
+    
 
     return (
         <>

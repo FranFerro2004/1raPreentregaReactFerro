@@ -3,6 +3,8 @@ import ItemListContainer from "./assets/ItemListContainer";
 import React from "react";
 import ProductDetailContainer from "./assets/ProductDetailContainer";
 import FormCompra from "./assets/FormCompra";
+import NavMenu from "./assets/NavMenu";
+import CartProvider from "./context/CartContex";
 
 const App = () => {
 
@@ -10,7 +12,9 @@ const App = () => {
 
     <BrowserRouter>
 
-    
+    <NavMenu/>
+
+    <CartProvider>
 
     <Routes>
 
@@ -23,6 +27,8 @@ const App = () => {
     <Route exact path="/form" element={<FormCompra/>} />
 
     </Routes>
+
+    </CartProvider>
 
     </BrowserRouter>
   );

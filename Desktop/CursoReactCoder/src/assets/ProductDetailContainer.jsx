@@ -176,21 +176,16 @@ const ProductDetailContainer = () => {
             const idProducto = parseInt(id);
             const productoEncontrado = data?.find(producto => producto.id === idProducto);
             setProducto(productoEncontrado || []);
-            console.log(productoEncontrado);
         };
 
         useEffect(() => {
-            obtenerProductoPorId(id);
-            console.log(id);
+            obtenerProductoPorId(id);          
         }, [id]);
 
-        useEffect(() => {
-            console.log(producto);
-        }, [producto]);
+    
 
         return (
             <>
-            <NavMenu />
             <ProductDetail
                 id={producto.id}
                 nombre={producto.title}

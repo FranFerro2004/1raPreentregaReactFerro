@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import ItemList from './ItemList';
 import NavMenu from './NavMenu';
 import { useParams } from 'react-router-dom';
@@ -175,13 +175,9 @@ const ItemListContainer = ({}) => {
         const [categorias, setCategorias] = useState([]);
         const { category } = useParams();
 
-        const obtenerCategoriasUnicas = () => {
-            const categoriasUnicas = [...new Set(data.map(producto => producto.category))];
-            setCategorias(['todas', ...categoriasUnicas]); 
-        };
+
 
         useEffect(() => {
-            obtenerCategoriasUnicas();
 
             if (category === "todas") {
                 setProductos(productosFijos);
@@ -194,13 +190,9 @@ const ItemListContainer = ({}) => {
             setProductosFijos(data);
         }, [category]);
 
-        console.log(productosFijos);
-        console.log(productos);
-        console.log(categorias);
 
     return (
         <>
-            <NavMenu productos={productos} categorias={categorias} />
             <ItemList data={productos} />
         </>
     );
