@@ -5,6 +5,7 @@ import ProductDetailContainer from "./assets/ProductDetailContainer";
 import FormCompra from "./assets/FormCompra";
 import NavMenu from "./assets/NavMenu";
 import CartProvider from "./context/CartContex";
+import Cart from "./assets/Cart";
 
 const App = () => {
 
@@ -25,6 +26,8 @@ const App = () => {
     <Route exact path='/category/:category' element={<ItemListContainer/>} />
 
     <Route exact path="/form" element={<FormCompra/>} />
+
+    <Route exact path="/cart" element={<Cart/>} />
 
     </Routes>
 

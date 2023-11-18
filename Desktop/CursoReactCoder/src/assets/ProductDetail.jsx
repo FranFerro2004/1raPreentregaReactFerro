@@ -9,7 +9,7 @@ const ProductDetail = ({ id, nombre, descripcion, precio, imagen }) => {
 
     const [cantidad, setCantidad] = useState(0);
 
-    const subirAlContext = () => agregarAlCarrito(id, cantidad, nombre, precio)
+    const subirAlContext = () => agregarAlCarrito(id, cantidad, nombre, precio, imagen, descripcion)
 
     const sumarProducto = () => {
         const suma = cantidad + 1;

@@ -5,7 +5,7 @@ const SelectorCantidad = ({ cantidad, sumarProducto, restarProducto }) => {
     return (
         <div>
         <Flex>
-            <Box p='4' bg='red.400'>
+            <Box p='4' >
             <Button colorScheme='blue' onClick={sumarProducto}>+</Button>
             </Box>
             <Spacer />
@@ -15,7 +15,7 @@ const SelectorCantidad = ({ cantidad, sumarProducto, restarProducto }) => {
             </div>
             </Box>
             <Spacer />
-            <Box p='4' bg='green.400'>
+            <Box p='4' >
             <Button colorScheme='blue' onClick={restarProducto}>-</Button>
             </Box>
         </Flex>

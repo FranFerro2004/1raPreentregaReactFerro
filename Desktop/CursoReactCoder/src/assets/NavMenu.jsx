@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Flex, Box, Spacer, MenuButton, MenuList, MenuItem, Menu, Input } from '@chakra-ui/react';
 import ItemListContainer from './ItemListContainer';
 import { Link, useParams } from 'react-router-dom';
+import CartWidget from './CartWidget';
+import { CartContext } from '../context/CartContex';
+
 
 const NavMenu = () => {
 
@@ -184,8 +187,6 @@ const NavMenu = () => {
             obtenerCategoriasUnicas();
         }, [category]);
 
-    
-    
 
     return (
         <div>
@@ -220,6 +221,9 @@ const NavMenu = () => {
                 </Box>
                 <Spacer />
                 <Box p='4' bg='green.400'>
+                    <Link to={'/Cart'}>
+                        <CartWidget/>
+                    </Link>
                 </Box>
             </Flex>
         </div>

@@ -13,7 +13,7 @@ return (
           <Heading size='md'>{nombre}</Heading>
           
           <Text color='blue.600' fontSize='2xl'>
-            {precio}
+            ${precio}
           </Text>
         </Stack>
       </CardBody>
