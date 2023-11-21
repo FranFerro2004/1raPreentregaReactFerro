@@ -2,6 +2,7 @@ import React from 'react'
 import ItemListContainer from './ItemListContainer'
 import Item from './Item'
 
+
 const ItemList = ({data}) => {
 
 
@@ -10,7 +11,7 @@ const ItemList = ({data}) => {
             {
                 data.map((p) => {
                     return(
-                        <Item  
+                        <Item  class= "item-card"
                         key={p.id}
                         id={p.id}
                         nombre={p.title}
@@ -20,7 +21,7 @@ const ItemList = ({data}) => {
                         />
                     )
                 })
-                    
+                
             }
         </div>
     )

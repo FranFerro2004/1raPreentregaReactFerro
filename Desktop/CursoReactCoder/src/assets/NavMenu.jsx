@@ -4,6 +4,7 @@ import ItemListContainer from './ItemListContainer';
 import { Link, useParams } from 'react-router-dom';
 import CartWidget from './CartWidget';
 import { CartContext } from '../context/CartContex';
+import './NavMenu.css'
 
 
 const NavMenu = () => {
@@ -173,63 +174,50 @@ const NavMenu = () => {
         },
         ]
 
-        const [categorias, setCategorias] = useState([]);
-
-        const {category} = useParams()
-
-
-        const obtenerCategoriasUnicas = () => {
-            const categoriasUnicas = [...new Set(data.map(producto => producto.category))];
-            setCategorias(['todas', ...categoriasUnicas]); 
-        };
-
-        useEffect(() => {
+            const [categorias, setCategorias] = useState([]);
+            const { category } = useParams();
+        
+            const obtenerCategoriasUnicas = () => {
+            const categoriasUnicas = [...new Set(data.map((producto) => producto.category))];
+            setCategorias(['todas', ...categoriasUnicas]);
+            };
+        
+            useEffect(() => {
             obtenerCategoriasUnicas();
-        }, [category]);
-
-
-    return (
-        <div>
-            <Flex>
-                <Box p='4' bg='green.400'>  
-                    <Link to={'/'}> 
-                        Shop
+            }, [category]);
+        
+            return (
+            <div className="nav-menu-container">
+                <Flex>
+                <Box p="4">
+                    <Link to="/" className="nav-menu-link">
+                    Shop
                     </Link>
                 </Box>
                 <Spacer />
-                <Box p='4' bg='green.400'>
+                <Box p="4">
                     <Menu>
-                        <MenuButton>
-                            Categorías
-                        </MenuButton>
-                        <MenuList id='categoria'>
-                            {categorias?.map((c, index) => (
-                                <MenuItem key={index}>
-                                    <Link to={`/category/${c}`}>
-                                        {c}
-                                    </Link>                                       
-                                </MenuItem>
-                            ))}
-                        </MenuList>
+                    <MenuButton className="menu-button">Categorías</MenuButton>
+                    <MenuList id="categoria">
+                        {categorias?.map((c, index) => (
+                        <MenuItem key={index} className="menu-item">
+                            <Link to={`/category/${c}`} className="nav-menu-link">
+                            {c}
+                            </Link>
+                        </MenuItem>
+                        ))}
+                    </MenuList>
                     </Menu>
                 </Box>
                 <Spacer />
-                <Box p='4' bg='green.400'>
-                    <Input
-                        placeholder='Qué productos buscas?'
-                    />
-                </Box>
-                <Spacer />
-                <Box p='4' bg='green.400'>
-                    <Link to={'/Cart'}>
-                        <CartWidget/>
+                <Box p="4">
+                    <Link to="/Cart" className="nav-menu-link">
+                    <CartWidget />
                     </Link>
                 </Box>
-            </Flex>
-        </div>
-    );
+                </Flex>
+            </div>
+            );
 };
-
+        
 export default NavMenu;
-
-
