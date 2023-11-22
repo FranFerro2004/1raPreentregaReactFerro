@@ -8,10 +8,6 @@ const Cart = () => {
 
     const eliminarDeContext = (nombre) => () => eliminarDelCarrito(nombre);
 
-    useEffect(() => {
-        console.log(carrito);
-    }, [carrito]);
-
     return (
         <div>
             {carrito?.map((p) => {

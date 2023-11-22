@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { FormControl, FormLabel, Input, FormHelperText, WrapItem, Button } from '@chakra-ui/react';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
+import { CartContext } from '../context/CartContex';
 
 const Form = () => {
     const [nombre, setNombre] = useState('');
     const [email, setEmail] = useState('');
     const [idOrden,setIdOrden] = useState(null)
+
+    const { carrito } = useContext(CartContext)
+
+
 
     const db = getFirestore()
     
@@ -20,7 +25,9 @@ const Form = () => {
 
     const orden = {
         nombre,
-        email
+        email,
+        carrito
+        
     }
     
     const coleccionOrdenes = collection(db, "MiOrden")
