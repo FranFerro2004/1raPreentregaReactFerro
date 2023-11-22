@@ -1,6 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../context/CartContex';
-import { Card, Image, Stack, CardBody, Text, CardFooter, Button, Heading } from '@chakra-ui/react';
+import { Card, Image, Stack, CardBody, Text, CardFooter, Button, Heading, WrapItem } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const { carrito, eliminarDelCarrito } = useContext(CartContext);
@@ -34,8 +35,20 @@ const Cart = () => {
                         </Stack>
                     </Card>
                 );
-            })}
+            })}   
+
+                <WrapItem>
+                    <Link to="/form">
+                        <Button colorScheme='gray' type='submit' id="botonEnviar">
+                            Ir a la Orden de Compra
+                        </Button>
+                    </Link>
+                        
+                </WrapItem>
         </div>
+
+
+
     );
 };
 

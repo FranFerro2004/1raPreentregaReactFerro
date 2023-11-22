@@ -28,7 +28,7 @@ const ProductDetail = ({ id, nombre, descripcion, precio, imagen }) => {
             <Stack mt="6" spacing="5">
             <Heading size="md">{nombre}</Heading>
             <Text color="blue.600" fontSize="2xl">
-                {precio}
+                ${precio}
             </Text>
             <Text color="blue.600" fontSize="2xl">
                 {descripcion}

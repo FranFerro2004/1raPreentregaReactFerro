@@ -6,6 +6,7 @@ import FormCompra from "./assets/FormCompra";
 import NavMenu from "./assets/NavMenu";
 import CartProvider from "./context/CartContex";
 import Cart from "./assets/Cart";
+import CartWidget from "./assets/CartWidget";
 
 const App = () => {
 
@@ -28,6 +29,8 @@ const App = () => {
     <Route exact path="/form" element={<FormCompra/>} />
 
     <Route exact path="/cart" element={<Cart/>} />
+
+    <Route exact path="/CartWidget" element={<CartWidget/>}/>
 
     </Routes>
 
